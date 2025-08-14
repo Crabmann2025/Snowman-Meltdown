@@ -10,7 +10,7 @@ def get_random_word():
     return WORDS[random.randint(0, len(WORDS) - 1)]
 
 
-def is_word_guessed(secret_word, guessd_letters):
+def is_word_guessed(secret_word, guessed_letters):
     """Überprüfen Sie, ob alle Buchstaben des geheimen Wortes erraten wurden."""
     return all(letter in guessed_letters for letter in secret_word)
 
@@ -33,7 +33,7 @@ def display_game_state(mistakes, secret_word, guessed_letters):
 def play_game():
     """Hauptspielschleife mit Ratelogik und Gewinn - / Verlustbedingungen."""
     secret_word = get_random_word()
-    guessed_letters = []
+    guessed_letters = set()
     mistakes = 0
     max_mistakes = len(STAGES) - 1
 
