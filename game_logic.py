@@ -72,3 +72,12 @@ def play_game():
     else:
         print("Oh no! The snowman melted.")
         print(f"The word was: {secret_word}")
+
+def main():
+    """Startet das Spiel und fragt nach Replay."""
+    while True:
+        play_game()
+        again = input("Play again? (y/n): ").lower().strip()
+        if again != "y":
+            print("Goodbye! Thanks for playing Snowman Meltdown!")
+            break
